@@ -1,0 +1,96 @@
+stages:
+  - development
+
+before_script:
+  - free -m
+
+#build:
+#  tags:
+#    - shell
+#  stage: build
+#  when: manual
+#  script:
+#    - pwd
+#    - sudo mkdir -p /srv/projects
+##    - sudo chown gitlab-runner:deployer /srv/projects
+#    - cd /srv/projects
+#    - sudo git clone git@gitlab.com:nahang/msmusic.git
+#    - cd ./msmusic
+#    - sudo git config --global user.email "you@example.com"
+#    - sudo git config --global user.name "iman"
+#    - sudo git pull origin build
+#    - sudo docker-compose up -d
+
+
+
+#test:
+#  stage: test
+#  script:
+#    - pwd
+#    - cd /srv/projects/msmusic
+#    - sudo git pull origin development
+#    - sudo docker exec -i ms-music-app php artisan
+#  tags:
+#    - shell
+
+
+
+
+development:
+  stage: development
+  only:
+    - development
+  #  when: manual
+#  needs: [test]
+  script:
+    - pwd
+    - cd /srv/projects/msmusic
+    - sudo git pull origin development
+#    - sudo docker-compose down
+#    - sudo docker-compose build
+    - sudo docker-compose up -d
+    - sudo docker exec -i ms-music-app rm -rf composer.lock
+    - sudo docker exec -i ms-music-app composer install
+    - sudo docker exec -i ms-music-app composer install
+    - sudo docker exec -i ms-music-app chmod 777 -R storage/
+  #    - sudo docker exec -i ms-music-app bash -c  "cd public && ln -s ../storage/app/public storage"
+  tags:
+    - shell
+
+
+
+#build_master:
+#  tags:
+#    - production
+#  only:
+#    - build_master
+#  stage: build_master
+#  when: manual
+#  script:
+#    - pwd
+#    - sudo mkdir -p /srv/projects
+#    - cd /srv/projects
+#    - sudo git clone git@gitlab.com:nahang/msmusic.git
+#    - cd ./msmusic
+#    - sudo git config --global user.email "you@example.com"
+#    - sudo git config --global user.name "Your Name"
+#    - sudo git pull origin build_master
+#    - sudo docker-compose  -f docker-compose-prod.yml up -d
+
+
+#master:
+#  stage: master
+#  only:
+#    - master
+#  script:
+#    - pwd
+#    - cd /srv/projects/msmusic
+#    - sudo git pull origin master
+#    - sudo docker-compose  -f docker-compose-prod.yml up -d
+#    - sudo docker exec -i ms-music-app rm -rf composer.lock
+#    - sudo docker exec -i ms-music-app composer install
+#    - sudo docker exec -i ms-music-app composer install
+#    - sudo docker exec -i ms-music-app chmod 777 -R storage/
+##    - sudo docker exec -i ms-music-app bash -c  "cd public && ln -s ../storage/app/public storage"
+#  tags:
+#    - production
