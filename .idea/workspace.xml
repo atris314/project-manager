@@ -2,101 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e86a7fa0-de01-479a-b004-64b69bf12fde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/app/Helpers/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/app.dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Enums/ProjectStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Enums/TaskStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Enums/UserRole.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/ConfirmablePasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/EmailVerificationPromptController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/NewPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/PasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/PasswordResetLinkController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Auth/VerifyEmailController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/ProfileController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/api/LoginApiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/api/ProjectController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/api/TaskController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Middleware/CheckRole.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Middleware/EnsureEmailIsVerified.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/Auth/LoginRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/ProfileUpdateRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/StoreProjectRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/StoreTaskRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/UpdateProjectRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Requests/UpdateTaskRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Resources/ProjectResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Http/Resources/TaskResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Models/Project.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Models/Task.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Services/ProjectService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/Services/TaskService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/View/Components/AppLayout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/View/Components/GuestLayout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sanctum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/factories/ProjectFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/factories/TaskFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/migrations/2025_08_30_094208_create_personal_access_tokens_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/migrations/2025_08_30_165833_add_role_to_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/migrations/2025_08_30_170156_create_projects_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/migrations/2025_08_30_170450_create_tasks_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/confirm-password.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/forgot-password.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/reset-password.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/auth/verify-email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/application-logo.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/auth-session-status.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/danger-button.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/dropdown-link.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/dropdown.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/input-error.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/input-label.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/modal.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/nav-link.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/primary-button.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/responsive-nav-link.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/secondary-button.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/components/text-input.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/layouts/guest.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/layouts/navigation.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/profile/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/profile/partials/delete-user-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/profile/partials/update-password-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/profile/partials/update-profile-information-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/Auth/AuthenticationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/Auth/EmailVerificationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/Auth/PasswordResetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/Auth/PasswordUpdateTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/Auth/RegistrationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/Feature/ProfileTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/conf.d/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/conf.d/app.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +73,7 @@
       <workItem from="1757966568228" duration="485000" />
       <workItem from="1757968709751" duration="1268000" />
       <workItem from="1758009108646" duration="27886000" />
-      <workItem from="1758093374294" duration="14699000" />
+      <workItem from="1758093374294" duration="15073000" />
     </task>
     <servers />
   </component>
