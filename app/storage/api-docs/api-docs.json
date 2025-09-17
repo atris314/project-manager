@@ -1,0 +1,548 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "GSMpay task api",
+        "description": "GSMpay task api Documentation",
+        "contact": {
+            "email": "Farinaz.haghighi314@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8010/",
+            "description": " API Server"
+        }
+    ],
+    "paths": {
+        "/": {},
+        "/api/v1/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "ثبت نام کاربر",
+                "description": "ثبت نام",
+                "operationId": "register",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "mobile",
+                                    "password",
+                                    "email",
+                                    "name"
+                                ],
+                                "properties": {
+                                    "mobile": {
+                                        "type": "number",
+                                        "format": "string",
+                                        "example": "شماره موبایل مثال : 09123456789"
+                                    },
+                                    "password": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " رمز عبور خود را وارد کنید "
+                                    },
+                                    "email": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " info@example.com "
+                                    },
+                                    "name": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " نام خود را وارد کنید "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "mobile",
+                                    "password",
+                                    "email",
+                                    "name"
+                                ],
+                                "properties": {
+                                    "mobile": {
+                                        "type": "number",
+                                        "format": "string",
+                                        "example": "شماره موبایل مثال : 09123456789"
+                                    },
+                                    "password": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " رمز عبور خود را وارد کنید "
+                                    },
+                                    "email": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " info@example.com "
+                                    },
+                                    "name": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " نام خود را وارد کنید "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "ثبت نام انجام شد",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV......."
+                                        },
+                                        "token_type": {
+                                            "type": "string",
+                                            "example": "bearer"
+                                        },
+                                        "user_mobile": {
+                                            "type": "string",
+                                            "example": "09123..."
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "ثبت نام با موفقیت انجام شد"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "خطایی رخ داده است",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "خطایی رخ داده است"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "ورود کاربر",
+                "description": "ورود کاربر با استفاده از شماره موبایل و رمز عبور",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "mobile",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "mobile": {
+                                        "type": "number",
+                                        "format": "string",
+                                        "example": "شماره موبایل مثال : 09123456789"
+                                    },
+                                    "password": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " رمز عبور خود را وارد کنید "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "mobile",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "mobile": {
+                                        "type": "number",
+                                        "format": "string",
+                                        "example": "شماره موبایل مثال : 09123456789"
+                                    },
+                                    "password": {
+                                        "type": "text",
+                                        "format": "string",
+                                        "example": " رمز عبور خود را وارد کنید "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "auth",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV......."
+                                        },
+                                        "token_type": {
+                                            "type": "string",
+                                            "example": "bearer"
+                                        },
+                                        "expires_in": {
+                                            "type": "string",
+                                            "example": "60"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "unauth",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "شما مجاز نیستید! احراز هویت انجام نشد"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/post": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "پست های کاربر",
+                "description": " لیست پست های کاربر لاگین شده را نمایش میدهد",
+                "operationId": "posts",
+                "responses": {
+                    "200": {
+                        "description": "نمایش لیست پست های شما",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "example": ""
+                                            }
+                                        },
+                                        "server_time": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "لیست پست های شما"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/post/show/{post}": {
+            "get": {
+                "tags": [
+                    "Post Detaile"
+                ],
+                "summary": "اطلاعات یک پست",
+                "description": " نمایش اطلاعات یک پست",
+                "operationId": "post.show",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "description": "post id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "نمایش اطلاعات پست",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "example": ""
+                                            }
+                                        },
+                                        "server_time": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "لیست پست های شما"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/profile/update": {
+            "post": {
+                "tags": [
+                    " User Profile"
+                ],
+                "summary": "افزودن تصویر پروفایل کاربر",
+                "description": "کاربر میتواند پروفایل خود را از طریق این اندپوینت تنظیم کند",
+                "operationId": "profile.update",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "image": {
+                                        "type": "file",
+                                        "format": "file",
+                                        "example": " "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "image": {
+                                        "type": "file",
+                                        "format": "file",
+                                        "example": " "
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "ثبت نام انجام شد",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV......."
+                                        },
+                                        "token_type": {
+                                            "type": "string",
+                                            "example": "bearer"
+                                        },
+                                        "user_mobile": {
+                                            "type": "string",
+                                            "example": "09123..."
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "ثبت نام با موفقیت انجام شد"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "خطایی رخ داده است",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "خطایی رخ داده است"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/post/visited": {
+            "get": {
+                "tags": [
+                    "UserList PostVisit"
+                ],
+                "summary": "لیستی از کاربران با مجموع بازدید پست هایشان",
+                "description": " لیستی از کاربران با مجموع بازدید پست هایشان",
+                "operationId": "post.visit",
+                "responses": {
+                    "200": {
+                        "description": "لیست پست های دیده شده",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "example": ""
+                                            }
+                                        },
+                                        "server_time": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "لیست پست های شما"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Register",
+            "description": "Register"
+        },
+        {
+            "name": "Login",
+            "description": "Login"
+        },
+        {
+            "name": "Posts",
+            "description": "Posts"
+        },
+        {
+            "name": "Post Detaile",
+            "description": "Post Detaile"
+        },
+        {
+            "name": " User Profile",
+            "description": " User Profile"
+        },
+        {
+            "name": "UserList PostVisit",
+            "description": "UserList PostVisit"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Project;
-use App\Models\Task;
+use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,19 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::factory(10)->create();
+        // User::factory(10)->create();
 
-        $users->each(function ($user) {
-            $projects = Project::factory(5)->create([
-                'owner_id' => $user->id,
-            ]);
+//        User::factory()->create([
+//            'name' => 'Test User',
+//            'email' => 'test@example.com',
+//        ]);
 
-            $projects->each(function ($project) {
-                Task::factory(10)->create([
-                    'project_id' => $project->id,
-                    'assigned_to' => \App\Models\User::inRandomOrder()->first()->id,
-                ]);
-            });
-        });
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'mobile' => '09123456789',
+            'password' => Hash::make('password123'),
+        ]);
+
+       User::factory(10)
+            ->has(Post::factory()->count(5))
+            ->create();
     }
 }

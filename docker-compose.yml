@@ -1,95 +1,94 @@
-version: '2'
 services:
 
   #PHP Service
-  pro-mn-app:
+  gsm-pay-app:
     build:
       context: .
       dockerfile: app.dockerfile
-    container_name: pro-mn-app
+    container_name: gsm-pay-app
     tty: true
     environment:
-      SERVICE_NAME: pro-mn-app
+      SERVICE_NAME: gsm-pay-app
       SERVICE_TAGS: dev
     working_dir: /var/www
-    #    ports:
-    #      - "9006:9000"
+    ports:
+      - "9006:9000"
     env_file: './app/.env'
     volumes:
       - ./app:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - pro-mn-main-network
+      - gsm-pay-main-network
     external_links:
       - rabbitmq:rabbitmq
     depends_on:
-      - pro-mn-mysql
+      - gsm-pay-mysql
     command: /bin/bash -c "php-fpm | /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf"
 
 
   #Nginx Service
-  pro-mn-webserver:
+  gsm-pay-webserver:
     build:
       context: ./
       dockerfile: webserver.dockerfile
-    container_name: pro-mn-webserver
+    container_name: gsm-pay-webserver
     tty: true
     ports:
-      - "8006:80"
+      - "8010:80"
     #      - "443:443"
     volumes:
       - ./app:/var/www
     depends_on:
-      - pro-mn-app
+      - gsm-pay-app
     networks:
-      - pro-mn-main-network
+      - gsm-pay-main-network
 
 
   #MySQL Service
-  pro-mn-mysql:
+  gsm-pay-mysql:
     image: mysql:8.0
-    container_name: pro-mn-mysql
+    container_name: gsm-pay-mysql
     restart: always
     tty: true
     ports:
       - "33405:3306"
     environment:
-      MYSQL_DATABASE: pro-mn
+      MYSQL_DATABASE: gsm-pay
       MYSQL_ROOT_PASSWORD: TtzTMuZoV8Giackg6RNW
       MYSQL_PASSWORD: TtzTMuZoV8Giackg6RNW
-#      MYSQL_USER: hyper
+      MYSQL_USER: gsm-pay
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./db_hyper_mysql:/var/lib/mysql/
+      - ./db_gsmpay_mysql:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
-      - pro-mn-main-network
+      - gsm-pay-main-network
 
   # phpmyadmin
-  pro-mn-phpmyadmin:
+  gsm-pay-phpmyadmin:
     depends_on:
-      - pro-mn-mysql
+      - gsm-pay-mysql
     image: phpmyadmin/phpmyadmin
-    container_name: pro-mn-phpmyadmin
+    container_name: gsm-pay-phpmyadmin
     restart: always
     ports:
-      - "8105:80"
+      - "8110:80"
     environment:
-      PMA_HOST: pro-mn-mysql
+      PMA_HOST: gsm-pay-mysql
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
     networks:
-      - pro-mn-main-network
+      - gsm-pay-main-network
 
 
 #Docker Networks
 networks:
-  pro-mn-main-network:
+  gsm-pay-main-network:
     driver: bridge
     external: true
 
 #Volumes
 volumes:
-  db_pro-mn_mysql:
+  db_gsm-pay_mysql:
     driver: local
